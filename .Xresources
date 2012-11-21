@@ -1,0 +1,133 @@
+! ---------------- XTerm ----------------------------------------------------
+XTerm*geometry:           80x40
+XTerm*saveLines:          8000
+XTerm*faceName:           terminusbold:pixelsize=12
+!XTerm*font:                !-*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+XTerm*dynamicColors:       true
+XTerm*colorMode:           true
+XTerm*cursorBlink:         true
+XTerm*cursorUnderLine:     false
+XTerm*utf8:                2
+XTerm*eightBitInput:       true
+XTerm*scrollTtyKeypress:   true
+XTerm*scrollTtyOutput:     false
+XTerm*scrollBar:           true
+XTerm*rightScrollBar:      false
+XTerm*jumpScroll:          true
+XTerm*multiScroll:         true
+XTerm*toolBar:             false
+!XTerm*VT100*translations:    #override \n\
+!      None<Key>Prior:           scroll-back(1,page) \n\
+!      None<Key>Next:            scroll-forw(1,page) \n\
+!      Shift<Key>Prior:          scroll-back(1,page) \n\
+!      Shift<Key>Next:           scroll-forw(1,page) \n\
+!      Shift<Key>Up:             scroll-back(1,line) \n\
+!      Shift<Key>Down:           scroll-forw(1,line) \n\
+!      Shift<Btn4Down>:          scroll-back(1,page) \n\
+!      Shift<Btn5Down>:          scroll-forw(1,page) \n\
+!      None<Btn4Down>:           scroll-back(5,line) \n\
+!      None<Btn5Down>:           scroll-forw(5,line) \n\
+!      <Btn4Down>:               string(0x9b) string("[62~") \n\
+!      <Btn5Down>:               string(0x9b) string("[63~") \n\
+!      <Key>Insert:              string(0x1b) string("[2~") \n\
+!      <Key>Delete:              string(0x1b) string("[3~") \n\
+!      <Key>Prior:               string(0x1b) string("[5~") \n\
+!      <Key>Next:                string(0x1b) string("[6~") \n\
+!      <Key>Up:                  string(0x1b) string("[A") \n\
+!      <Key>Down:                string(0x1b) string("[B") \n\
+!      <Key>Right:               string(0x1b) string("[C") \n\
+!      <Key>Left:                string(0x1b) string("[D")
+
+! ---------------- Xft font settings ----------------------------------------
+Xft.dpi:           96
+Xft.autohint:      false
+Xft.antialias:     true
+Xft.rgba:          rgb
+Xft.lcdfilter:     lcddefault
+Xft.hinting:       true
+Xft.hintstyle:     hintslight
+
+! ---------------- XClock ---------------------------------------------------
+XClock*update:            1
+XClock*analog:            false
+XClock*Foreground:        #C0C0C0
+XClock*background:        #353535
+
+! ---------------- XCalc ----------------------------------------------------
+XCalc*geometry:                        200x275
+XCalc.ti.bevel.background:             #111111
+XCalc.ti.bevel.screen.background:      #000000
+XCalc.ti.bevel.screen.DEG.background:  #000000
+XCalc.ti.bevel.screen.DEG.foreground:  LightSeaGreen
+XCalc.ti.bevel.screen.GRAD.background: #000000
+XCalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
+XCalc.ti.bevel.screen.RAD.background:  #000000
+XCalc.ti.bevel.screen.RAD.foreground:  LightSeaGreen
+XCalc.ti.bevel.screen.INV.background:  #000000
+XCalc.ti.bevel.screen.INV.foreground:  Red
+XCalc.ti.bevel.screen.LCD.background:  #000000
+XCalc.ti.bevel.screen.LCD.foreground:  LightSeaGreen
+XCalc.ti.bevel.screen.LCD.shadowWidth: 0
+XCalc.ti.bevel.screen.M.background:    #000000
+XCalc.ti.bevel.screen.M.foreground:    LightSeaGreen
+XCalc.ti.bevel.screen.P.background:    #000000
+XCalc.ti.bevel.screen.P.foreground:    Yellow
+XCalc.ti.Command.foreground:  White
+XCalc.ti.Command.background:  #777777
+XCalc.ti.button5.background:  Orange3
+XCalc.ti.button19.background: #611161
+XCalc.ti.button18.background: #611161
+XCalc.ti.button20.background: #611111
+XCalc.ti.button25.background: #722222
+XCalc.ti.button30.background: #833333
+XCalc.ti.button35.background: #944444
+XCalc.ti.button40.background: #a55555
+XCalc.ti.button22.background: #222262
+XCalc.ti.button23.background: #222262
+XCalc.ti.button24.background: #222272
+XCalc.ti.button27.background: #333373
+XCalc.ti.button28.background: #333373
+XCalc.ti.button29.background: #333373
+XCalc.ti.button32.background: #444484
+XCalc.ti.button33.background: #444484
+XCalc.ti.button34.background: #444484
+XCalc.ti.button37.background: #555595
+XCalc.ti.button38.background: #555595
+XCalc.ti.button39.background: #555595
+XCalc*Cursor:                 hand2
+XCalc*ShapeStyle:             rectangle
+
+! ---------------- URxvt ----------------------------------------------------
+URxvt*foreground:   #A5A5A5
+URxvt*background:   #000000
+
+! ---------------- X colors -------------------------------------------------
+*background:            #fdf6e3
+*foreground:            #839496
+*fading:                40
+*fadeColor:             #fdf6e3
+*cursorColor:           #586e75
+!! black dark/light
+*color0:                #eee8d5
+*color8:                #fdf6e3
+!! red dark/light
+*color1:                #dc322f
+*color9:                #cb4b16
+!! green dark/light
+*color2:                #859900
+*color10:               #93a1a1
+!! yellow dark/light
+*color3:                #b58900
+*color11:               #839496
+!! blue dark/light
+*color4:                #268bd2
+*color12:               #657b83
+!! magenta dark/light
+*color5:                #d33682
+*color13:               #6c71c4
+!! cyan dark/light
+*color6:                #2aa198
+*color14:               #586e75
+!! white dark/light
+*color7:                #073642
+*color15:               #002b36
