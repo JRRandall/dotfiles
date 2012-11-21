@@ -2,7 +2,7 @@
 #  Author:      Justin Randall (randall AT gmail DOT com)
 #  Version:     0.1
 #  Created:     Mon Apr 09 10:00 AM 2012 EDT
-#  Last Change: Mon Nov 19 10:00 PM 2012 EST
+#  Last Change: Wed Nov 21 12:00 AM 2012 EST
 #  Description: Zsh configuration file
 #  History:     none
 
@@ -326,6 +326,20 @@ function sendkey()                     # send public key to remote server
         fi
         ssh $1 'cat >> $HOME/.ssh/authorized_keys' < $key
     fi
+}
+
+function copykey()                     # copy public key to the clipboard
+{
+    local key=""
+    if [ -f $HOME/.ssh/id_dsa.pub ]; then
+        key=$HOME/.ssh/id_dsa.pub
+    elif [ -f $HOME/.ssh/id_rsa.pub ]; then
+        key=$HOME/.ssh/id_rsa.pub
+    else
+        echo "No public key found" >&2
+        return 1
+    fi
+    pbcopy < $key
 }
 
 function title()                       # sets terminal title bar text
