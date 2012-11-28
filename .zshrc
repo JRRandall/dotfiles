@@ -2,7 +2,7 @@
 #  Author:      Justin Randall (randall AT gmail DOT com)
 #  Version:     0.1
 #  Created:     Mon Apr 09 10:00 AM 2012 EDT
-#  Last Change: Wed Nov 21 12:00 AM 2012 EST
+#  Last Change: Wed Nov 28 12:00 AM 2012 EST
 #  Description: Zsh configuration file
 #  History:     none
 
@@ -246,9 +246,9 @@ function fd() { find . -type d -name '*'$*'*'; }
 #function rgrep() { find . -name "*.cpp" -o -name "*.h" |xargs grep -n "$*"; }
 function rgrep() { find . -type f -print |xargs grep -i -n "$*"; }
 function rminode() { find . -inum "$*" -exec rm -i "{}" +; }
-function gcompress() { tar cvf - "$*" | gzip -8cvv > "$*".tar.gz ; }
-function bcompress() { tar cvf - "$*" | bzip2 -9cvv > "$*".tar.bz2 ; }
-function lcompress() { tar cvf - "$*" | xz -5cvv > "$*".tar.xz ; }
+function gcompress() { tar cvf - "$*" | gzip -8cvv > "$*".tgz ; }
+function bcompress() { tar cvf - "$*" | bzip2 -9cvv > "$*".tbz ; }
+function lcompress() { tar cvf - "$*" | xz -5cvv > "$*".txz ; }
 function getcolumn() { perl -ne '@cols = split; print "$cols['$1']\n"' ; }
 function showlines() { perl -pe 's/^/$. /' "$@" ; }
 function showstrings() { cat "$1" | tr -d "\0" | strings ; }
@@ -300,6 +300,7 @@ function extract()                     # extract some common archive types
             *.xz)        unxz       "$1"             ;;
             *.tar)       tar xvf    "$1"             ;;
             *.tbz2)      bunzip2  < "$1" | tar xvf - ;;
+            *.tbz)       bunzip2  < "$1" | tar xvf - ;;
             *.tgz)       gunzip   < "$1" | tar xvf - ;;
             *.txz)       unxz     < "$1" | tar xvf - ;;
             *.zip)       unzip      "$1"             ;;
@@ -361,21 +362,6 @@ function title()                       # sets terminal title bar text
     esac
 }
 
-function icon()                        # sets terminal icon (minimized) text
-{
-    case $TERM in
-        *xterm*|(ux|x)rvt|(dt|a|k|E)term)
-            print -nR $'\033]1;'$*$'\007\a'
-            ;;
-        vt[24]20*)
-            print -nR ""
-            ;;
-        sun*)
-            print -nR $'\033]L'$*$'\033\\a'
-            ;;
-    esac
-}
-
 function precmd()                      # set the prompt, title bar, and icon
 {
     local TERMWIDTH
@@ -405,7 +391,6 @@ function precmd()                      # set the prompt, title bar, and icon
 
     setprompt
     title "$PWD - zsh - ${COLUMNS}x${LINES}"
-    icon "$host"
 }
 
 function preexec()                     # put the current command in title bar
@@ -413,7 +398,6 @@ function preexec()                     # put the current command in title bar
     emulate -L zsh
     local -a cmd; cmd=(${(z)2})
     title $cmd[1]:t "$cmd[2,-1]"
-    icon "$host"
 }
 
 # PROMPT SETTINGS
