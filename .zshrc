@@ -2,7 +2,7 @@
 #  Author:      Justin Randall (randall AT gmail DOT com)
 #  Version:     0.1
 #  Created:     Mon Apr 09 10:00 AM 2012 EDT
-#  Last Change: Wed Nov 28 12:00 AM 2012 EST
+#  Last Change: Sun Jan 27 02:00 PM 2013 EST
 #  Description: Zsh configuration file
 #  History:     none
 
@@ -231,11 +231,16 @@ alias gv='gvim'
 alias edit='gvim'
 alias gvd='gvimdiff -geometry 160x50'
 alias ctags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q'
-alias ls='ls -a --color'               # GNU colorized ls
 alias rm='rm -v -i'                    # verbose file deletion
 alias cp='cp -v -i'                    # verbose file copy
 alias mv='mv -v -i'                    # verbose file move
 alias del='\rm -rf -v'                 # MS-DOS style unsafe file removal
+
+if [[ $ARCH == Darwin ]]; then
+    alias ls='ls -a'                   # Mac OS X does not use GNU ls
+else
+    alias ls='ls -a --color'           # GNU colorized ls
+fi
 
 # utility functions to find files by pattern match, remove by index-node,
 # compress directories to various tape archive formats, grab strings, and
