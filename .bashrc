@@ -93,7 +93,7 @@ function lcompress() { tar cvf - "$*" | xz -5cvv > "$*".tar.xz ; }
 function showstrings() { cat "$1" | tr -d "\0" | strings ; }
 function hex2dec() { echo $((0x$1)) ; }
 function dec2hex() { printf "%x\n" $1 ; }
-function extract()            # extract some common archive types
+function extract()               # extract some common archive types
 {
   if [ -f "$1" ]; then
     case "$1" in
@@ -118,9 +118,9 @@ function extract()            # extract some common archive types
     echo "'$1' file not found" >&2
   fi
 }
-function sendkey()             # send public key to remote server
+function sendkey()               # send public key to remote server
 {
-  if [ "$#" -eq 1 ]; then      # usage: sendkey <user@remotehost>
+  if [ "$#" -eq 1 ]; then        # usage: sendkey <user@remotehost>
     local key=""
     if [ -f $HOME/.ssh/id_ecdsa.pub ]; then
       key=$HOME/.ssh/id_ecdsa.pub
@@ -133,19 +133,19 @@ function sendkey()             # send public key to remote server
     ssh $1 'cat >> $HOME/.ssh/authorized_keys' < $key
   fi
 }
-export TERM=xterm-256color    # set terminal type
+export TERM=xterm-256color       # set terminal type
 # two line prompt that can auto-adjust to terminal width
-C2=$'\001\033[1;34;40m\002'   # begin prompt bold cyan with black background
-C0=$'\001\033[0;0m\002'       # end prompt normal
+C2=$'\001\033[1;34;40m\002'      # begin prompt bold cyan with black background
+C0=$'\001\033[0;0m\002'          # end prompt normal
 PS1='${C2}\[$(printf "%*s" $(($(tput cols)-22)) "") [\d \t]\r\u@\h \w \]${C0}\n\$ '
-case "$(uname -sr)" in        # specific settings for certain OS
-  Darwin*)                    # echo 'macOS'
+case "$(uname -sr)" in           # specific settings for certain OS
+  Darwin*)                       # echo 'macOS'
     ;;
-  Linux*Microsoft*)           # echo 'Windows Subsystem for Linux'
+  Linux*Microsoft*)              # echo 'Windows Subsystem for Linux'
     ;;
-  Linux*)                     # echo 'Linux'
+  Linux*)                        # echo 'Linux'
     ;;
   CYGWIN*|MINGW*|MINGW32*|MSYS*) # echo 'Windows'
-    export NO_AT_BRIDGE=1     # stop cygwin dbus errors
+    export NO_AT_BRIDGE=1        # stop cygwin dbus errors
     ;;
 esac
