@@ -90,6 +90,8 @@ function rminode() { find . -inum "$*" -exec rm -i "{}" +; }
 function gcompress() { tar cvf - "$*" | gzip -8cvv > "$*".tar.gz ; }
 function bcompress() { tar cvf - "$*" | bzip2 -9cvv > "$*".tar.bz2 ; }
 function lcompress() { tar cvf - "$*" | xz -5cvv > "$*".tar.xz ; }
+function zcompress() { zip -9rv "$*".zip "$*" ; }
+function 7compress() { 7z a -bb1 "$*".7z "$*" ; }
 function showstrings() { cat "$1" | tr -d "\0" | strings ; }
 function hex2dec() { echo $((0x$1)) ; }
 function dec2hex() { printf "%x\n" $1 ; }
