@@ -1,0 +1,32 @@
+#
+# User Menu Description
+#
+
+
+Menu User
+{
+        "Dev"               	f.menu Tools
+}
+
+Menu Tools
+{
+	"Xsensors" 		f.checkexec.sh.le "xsensors"
+	"" 			f.separator
+	"Diff Tool" 		f.checkexec.sh.le "meld"
+	"Visual Code" 		f.checkexec.sh.le "/usr/share/code/code"
+	"VirtualBox" 		f.checkexec.sh.le "/usr/bin/virtualbox"
+	"TeamViewer" 		f.checkexec.sh.le "/opt/teamviewer/tv_bin/TeamViewer"
+	"OpenOffice"		f.checkexec.sh.le "/usr/bin/openoffice.org"
+	"" 			f.separator
+#	"ScreenShot" 		f.exec 	"mlaunch -g gnome-screenshot -i"
+	"ScreenShot" 		f.exec 	"/usr/bin/import -window root $HOME/Pictures/`date +%Y%m%d_%H%M%S`_screenshot.png"
+	"Xmag"			f.checkexec.sh.le "xmag"
+	"PDF Viewer"		f.checkexec.sh.le "xpdf"
+	"X Kill"		f.exec "/usr/bin/xkill"
+	"X Refresh" 		f.exec"/usr/bin/xrefresh"
+	"X Prop"		f.exec "/usr/bin/xprop > /tmp/e ; xconfirm -c -useslider -file /tmp/e ; rm -f /tmp/e"
+	"X WinInfo" 		f.exec "/usr/bin/xwininfo  > /tmp/e ; xconfirm -c -useslider -file /tmp/e ; rm -f /tmp/e"
+}
+# http://main.kjsmith.net/text65/_auxchestrc.txt
+# https://forums.sgi.sh/index.php?threads/customizing-your-toolbox-with-chestrc-and-auxchestrc.73/
+# 

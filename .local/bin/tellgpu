@@ -1,0 +1,4 @@
+#!/bin/bash
+# requires gxmessage and lshw to be installed
+
+gxmessage -buttons Ok:0 -default Ok "`lshw -C display 2> /dev/null`" -title notify -nearmouse -print

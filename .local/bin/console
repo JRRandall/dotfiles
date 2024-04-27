@@ -1,0 +1,5 @@
+#!/bin/bash
+xset b off
+
+xterm -iconic +hm -bc -name XConsole -title "Console" -bg RosyBrown4 -selbg snow -selfg RosyBrown4 -fg snow -xrm 'XTerm*allowTitleOps: false' -e "tail -n 300 -f $HOME/.local/share/xorg/Xorg.0.log" & disown
+

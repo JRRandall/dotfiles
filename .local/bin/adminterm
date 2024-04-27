@@ -1,0 +1,11 @@
+#!/bin/bash
+xset b off
+
+if grep -q 'fedora' /proc/version ; then
+    xterm +hm -bc -name adminterm -title "Root Terminal" -bg IndianRed4 -selbg snow -selfg IndianRed4 -fg snow -xrm 'XTerm*allowTitleOps: false' -e /bin/bash -l -c "sudo -s" & disown
+elif grep -q 'Ubuntu' /proc/version ; then
+    xterm +hm -bc -name adminterm -title "Root Terminal" -bg IndianRed4 -selbg snow -selfg IndianRed4 -fg snow -xrm 'XTerm*allowTitleOps: false' -e /bin/bash -l -c "sudo -s" & disown
+else
+    xterm +hm -bc -name adminterm -title "Root Terminal" -bg IndianRed4 -selbg snow -selfg IndianRed4 -fg snow -xrm 'XTerm*allowTitleOps: false' -e /bin/bash -l -c "su -" & disown
+fi
+
