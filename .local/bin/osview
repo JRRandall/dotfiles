@@ -1,2 +1,2 @@
 #!/bin/bash
-xosview2 -geometry 272x246+38-30
+xosview2 -geometry 272x246+38-30 & disown
