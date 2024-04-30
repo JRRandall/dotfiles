@@ -136,7 +136,7 @@ XClock*xft.fontName:        Sans
 XClock*xft.fontStyle:       Normal
 XClock*xft.fontSize:        10
 XClock*background:          gray
-!XClock*update:            1
+!XClock*update:              1
 XClock*geometry:            210x210-10+33
 
 !! X calculator settings
@@ -188,3 +188,132 @@ xcalc*ti.button49.background: gray95
 xcalc*ti.button52.background: gray95
 xcalc*ti.button53.background: gray95
 xcalc*ti.button54.background: gray95
+
+!! X osview
+!! set Decay options to True for more accurate snapshot
+xosview*title:      System Status
+xosview*font:       Mono-10
+xosview*background: #0A3560
+xosview*foreground: #2C5783
+xosview*captions:   False
+xosview*labels:     True
+xosview*usedlabels: True
+xosview*transparent:False
+xosview*graphNumCols:       128
+xosview*horizontalMargin:   10
+xosview*verticalMargin:     6
+xosview*verticalSpacing:    10
+xosview*load:               True
+xosview*loadCritColor:      #FC842B
+xosview*loadWarnColor:      #F2EF44
+xosview*loadProcColor:      #56E67B
+xosview*loadIdleColor:      #03315E
+xosview*loadPriority:       20
+xosview*loadWarnThreshold:  15
+xosview*loadCritThreshold:  18
+xosview*loadDecay:          False
+xosview*loadGraph:          False
+xosview*loadUsedFormat:     float
+xosview*loadCpuSpeed:       True
+xosview*cpu:                True
+xosview*cpuUserColor:       #56E67B
+xosview*cpuNiceColor:       #F2EF44
+xosview*cpuSystemColor:     #FC842B
+xosview*cpuWaitColor:       #0ABBDA
+xosview*cpuInterruptColor:  #0DA707
+xosview*cpuSoftIntColor:    #AF0BEB
+xosview*cpuStolenColor:     #D31B4C
+xosview*cpuGuestColor:      #F90B53
+xosview*cpuNiceGuestColor:  #F9608E
+xosview*cpuFreeColor:       #03315E
+xosview*cpuPriority:        2
+xosview*cpuDecay:           False
+xosview*cpuGraph:           False
+xosview*cpuUsedFormat:      percent
+xosview*cpuUsedDecay:       False
+xosview*cpuFormat:          auto
+xosview*mem:                True
+xosview*memKernelColor:     yellow
+xosview*memUsedColor:       #56E67B
+xosview*memBufferColor:     #F2EF44
+xosview*memCacheColor:      #0ABBDA
+xosview*memSwapCacheColor:  #AF0BEB
+xosview*memFreeColor:       #03315E
+xosview*memTextColor:       blue
+xosview*memOtherColor:      orange
+xosview*memActiveColor:     #56E67B
+xosview*memInactiveColor:   #0DA707
+xosview*memWiredColor:      #FC842B
+xosview*memPriority:        10
+xosview*memDecay:           False
+xosview*memGraph:           False
+xosview*memUsedFormat:      autoscale
+xosview*disk:               True
+xosview*diskUsedColor:      seagreen
+xosview*diskIdleColor:      #03315E
+xosview*diskWriteColor:     #F2EF44
+xosview*diskReadColor:      #56E67B
+xosview*diskBandwidth:      6750000
+xosview*diskPriority:       6
+xosview*diskDecay:          False
+xosview*diskUsedFormat:     autoscale
+xosview*diskUsedDecay:      False
+xosview*diskGraph:  False
+xosview*swap:       False
+xosview*filesys:    False
+xosview*page:       False
+xosview*wlink:      False
+xosview*net:                True
+xosview*netBandwidth:       6750000
+xosview*netInColor:         #56E67B
+xosview*netOutColor:        #F2EF44
+xosview*netBackground:      #03315E
+xosview*netPriority:        3
+xosview*netDecay:           False
+xosview*netGraph:           False
+xosview*netUsedFormat:      autoscale
+xosview*netUsedDecay:       False
+xosview*netIface:           -lo0
+xosview*irqrate:    False
+xosview*interrupts: False
+xosview*battery:    False
+xosview*gfx:        False
+xosview*serial0:    False
+xosview*serial1:    False
+xosview*serial2:    False
+xosview*serial3:    False
+xosview*RAID:       False
+xosview*tzone:      False
+xosview*lmstemp:    False
+xosview*NFSDStats:  False
+xosview*NFSStats:   False
+xosview*coretemp:   False
+xosview*bsdsensor:  False
+
+
+!! X message dialog
+xmessage*form.okay.shapeStyle: rectangle
+xmessage*form.okay.background: IndianRed
+xmessage*form.okay.foreground: rgb:e/b/b
+xmessage*message*background: ivory3
+xmessage*background: gray85
+xmessage*foreground: gray15
+xmessage*Scrollbar.width: 10
+xmessage*Scrollbar.borderWidth: 1
+xmessage*Text.?.cursorColor: rgb:d/5/5
+xmessage*Text.borderColor: gray65
+xmessage*Text*background: gray95
+xmessage*Command.highlightThickness: 1
+xmessage*Command.internalWidth: 5
+xmessage*Command.internalHeight: 3
+xmessage*Command.borderColor: gray40
+xmessage*Command.shapeStyle: Rectangle
+xmessage*Command.background: gray80
+xmessage*faceName: DejaVu Sans Mono
+xmessage*faceSize: 12
+xmessage*message.scrollVertical: Always
+xmessage*message.scrollHorizontal: Never
+! add keyboard shortcuts to easily quit program
+xmessage*baseTranslations:#augment\
+        <Key>Return:exit()\n\
+        <Key>space:exit()
