@@ -122,6 +122,21 @@ XTerm*scrollTtyOutput:	false
 XTerm*toolBar:	false
 XTerm*utf8:	2
 
+!! rxvt-unicode terminal settings
+URxvt*font:     xft:mono:medium:size=10
+URxvt*internalBorder:
+URxvt*letterSpace: -1
+URxvt*saveLines:	10000
+URxvt*geometry:	86x40
+! Ctrl+Print Screen to save the scrollback buffer to a file
+URxvt.print-pipe: cat > ~/Downloads/URxvt_$(date '+%Y-%m-%d_%H:%M:%S').txt
+URxvt.title: Terminal
+URxvt*termName:  xterm-256color
+URxvt.loginShell:  true
+URxvt*scrollstyle: rxvt
+URxvt*scrollColor: #B2B2B2
+URxvt*troughColor: #969696
+
 !! X clock settings
 *xclock.clientDecoration:   -title -resize +border
 XClock.Clock.render:        true
@@ -136,6 +151,7 @@ XClock*xft.fontName:        Sans
 XClock*xft.fontStyle:       Normal
 XClock*xft.fontSize:        10
 XClock*background:          gray
+XClock*foreground:          black
 !XClock*update:              1
 XClock*geometry:            210x210-10+33
 
