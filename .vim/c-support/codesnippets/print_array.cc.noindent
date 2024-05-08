@@ -1,0 +1,27 @@
+//+-----------------------------------------------------------------------+//
+//| Method: print_array()   Author: |AUTHORREF|
+//+-----------------------------------------------------------------------+//
+template < class T, unsigned width, unsigned precision >
+void print_array ( T           *array,       // array to print
+                   int          n,           // number of elements to print
+                   int          nrow,        // number of elements per row
+                   std::string  arrayname    // array name
+                 )
+{
+    std::string line(" index | content\n ------+-");
+
+    cout << "\n\n array \"" << arrayname
+        << "\", length " << n << endl << endl;
+    cout << line.append(width*nrow, '-');
+    for ( int i = 0; i < n; i += 1 )
+    {
+        if( i % nrow == 0 )
+        {
+            cout  << endl << setw(6) << i << " | ";
+        }
+        cout << setw(width) << fixed << setprecision(precision) << array[i];
+    }
+    cout << endl << endl;
+    return ;
+}
+
