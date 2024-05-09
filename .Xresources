@@ -125,7 +125,10 @@ XTerm*toolBar:	false
 XTerm*utf8:	2
 
 !! rxvt-unicode terminal settings
-URxvt*font:     xft:mono:medium:size=10
+!URxvt*font:     xft:mono:medium:size=10
+!!URxvt*font:     xft:DejaVu Sans Mono:medium:size=10
+URxvt*font:     xft:Consolas:medium:size=10
+!!URxvt*font:     xft:DejaVu Sans Mono:pixelsize=12
 URxvt*internalBorder:
 URxvt*letterSpace: -1
 URxvt*saveLines:	10000
@@ -133,7 +136,7 @@ URxvt*geometry:	86x40
 ! Ctrl+Print Screen to save the scrollback buffer to a file
 URxvt.print-pipe: cat > ~/Downloads/URxvt_$(date '+%Y-%m-%d_%H:%M:%S').txt
 URxvt.title: Terminal
-URxvt*termName:  xterm-256color
+!URxvt*termName:  xterm-256color
 URxvt.loginShell:  true
 URxvt*scrollstyle: rxvt
 URxvt*scrollColor: #B2B2B2

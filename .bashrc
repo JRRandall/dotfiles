@@ -64,6 +64,7 @@ alias ping='ping -c 5'                 # ping just does 5 packets
 alias dir='ls -lah'                    # list files MS-DOS style
 alias ls='ls -a'                       # list all the files
 alias ll='ls -l'                       # long file list <dir> style
+alias lf='ls -d -- */ .*/'             # lisd all directories (folders) only
 alias lx='ls -lXB'                     # sort by extension
 alias lk='ls -lSr'                     # sort by size, biggest last
 alias lc='ls -ltcr'                    # sort by change time, recent last
@@ -99,18 +100,18 @@ function extract()               # extract some common archive types
 {
   if [ -f "$1" ]; then
     case "$1" in
-      *.tar.bz2)   bunzip2  < "$1" | tar xvf - ;;
-      *.tar.gz)    gunzip   < "$1" | tar xvf - ;;
-      *.tar.xz)    unxz     < "$1" | tar xvf - ;;
+      *.tar.bz2)                               ;& # fall through
+      *.tbz2)                                  ;& # fall through
+      *.tbz)       bunzip2  < "$1" | tar xvf - ;;
       *.bz2)       bunzip2    "$1"             ;;
-      *.rar)       unrar x    "$1"             ;;
+      *.tar.gz)                                ;& # fall through
+      *.tgz)       gunzip   < "$1" | tar xvf - ;;
       *.gz)        gunzip     "$1"             ;;
+      *.tar.xz)                                ;& # fall through
+      *.txz)       unxz     < "$1" | tar xvf - ;;
+      *.rar)       unrar x    "$1"             ;;
       *.xz)        unxz       "$1"             ;;
       *.tar)       tar xvf    "$1"             ;;
-      *.tbz2)      bunzip2  < "$1" | tar xvf - ;;
-      *.tbz)       bunzip2  < "$1" | tar xvf - ;;
-      *.tgz)       gunzip   < "$1" | tar xvf - ;;
-      *.txz)       unxz     < "$1" | tar xvf - ;;
       *.zip)       unzip      "$1"             ;;
       *.Z)         uncompress "$1"             ;;
       *.7z)        7z x       "$1"             ;;
@@ -151,3 +152,4 @@ case "$(uname -sr)" in           # specific settings for certain OS
     export NO_AT_BRIDGE=1        # stop cygwin dbus errors
     ;;
 esac
+export QT_QPA_PLATFORMTHEME=gtk3 # make Qt theme look like our gtk one
