@@ -109,7 +109,9 @@ XTerm*cursorBlink:	true
 XTerm*cursorUnderLine:	false
 XTerm*dynamicColors:	true
 XTerm*eightBitInput:	true
-XTerm*faceName:	terminusbold:pixelsize=12
+!XTerm*faceName: xft:Consolas:pixelsize=12
+XTerm*faceName: xft:DejaVu Sans Mono:pixelsize=12
+!XTerm*faceName:	monospace:pixelsize=12
 !XTerm*faceName:	terminusbold:pixelsize=24
 XTerm*geometry:	86x40
 XTerm*jumpScroll:	true
