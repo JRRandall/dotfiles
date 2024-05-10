@@ -64,7 +64,7 @@ alias ping='ping -c 5'                 # ping just does 5 packets
 alias dir='ls -lah'                    # list files MS-DOS style
 alias ls='ls -a'                       # list all the files
 alias ll='ls -l'                       # long file list <dir> style
-alias lf='ls -d -- */ .*/'             # lisd all directories (folders) only
+alias lf='ls -d -- */ .*/ 2>/dev/null' # lisd all directories (folders) only
 alias lx='ls -lXB'                     # sort by extension
 alias lk='ls -lSr'                     # sort by size, biggest last
 alias lc='ls -ltcr'                    # sort by change time, recent last
@@ -152,4 +152,9 @@ case "$(uname -sr)" in           # specific settings for certain OS
     export NO_AT_BRIDGE=1        # stop cygwin dbus errors
     ;;
 esac
-export QT_QPA_PLATFORMTHEME=gtk3 # make Qt theme look like our gtk one
+
+# theme settings
+export QT_QPA_PLATFORMTHEME="gtk3"
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export QT_STYLE_OVERRIDE="kvantum"

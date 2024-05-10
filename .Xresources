@@ -105,7 +105,7 @@ Xft.hinting:    true
 !! X terminal settings
 XTerm*charClass: 0-32:1,33-126:2,127-160:3,161-255:2
 XTerm*colorMode:	on
-XTerm*cursorBlink:	true
+XTerm*cursorBlink:	false
 XTerm*cursorUnderLine:	false
 XTerm*dynamicColors:	true
 XTerm*eightBitInput:	true
@@ -123,11 +123,15 @@ XTerm*scrollTtyKeypress:	true
 XTerm*scrollTtyOutput:	false
 XTerm*toolBar:	false
 XTerm*utf8:	2
+!XTerm*allowTitleOps: false
+!XTerm*allowWindowOps: false
+!XTerm*allowFontOps: false
+!XTerm*allowTcapOps: false
 
 !! rxvt-unicode terminal settings
 !URxvt*font:     xft:mono:medium:size=10
-!!URxvt*font:     xft:DejaVu Sans Mono:medium:size=10
-URxvt*font:     xft:Consolas:medium:size=10
+URxvt*font:     xft:DejaVu Sans Mono:medium:size=10
+!!URxvt*font:     xft:Consolas:medium:size=10
 !!URxvt*font:     xft:DejaVu Sans Mono:pixelsize=12
 URxvt*internalBorder:
 URxvt*letterSpace: -1
@@ -141,6 +145,11 @@ URxvt.loginShell:  true
 URxvt*scrollstyle: rxvt
 URxvt*scrollColor: #B2B2B2
 URxvt*troughColor: #969696
+
+*SimpleMenu*Cursor:     left_ptr
+*Cursor:                left_ptr
+*Cursor*foreground:     red
+*Cursor*background:     white
 
 !! X clock settings
 *xclock.clientDecoration:   -title -resize +border
