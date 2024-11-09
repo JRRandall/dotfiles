@@ -1,0 +1,74 @@
+/* Scrollbar width fixes */
+scrollbar.vertical slider,
+scrollbar.slider.vertical
+{
+    min-width: 14px;
+}
+scrollbar.horizontal slider,
+scrollbar.slider.horizontal
+{
+    min-height: 14px;
+}
+
+/* Steppers */
+* {
+    -GtkScrollbar-has-backward-stepper: 1;
+    -GtkScrollbar-has-forward-stepper: 1;
+}
+
+scrollbar button {
+    min-width: 6px;
+    min-height: 8px;
+}
+
+scrollbar.vertical button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+scrollbar.vertical button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+scrollbar.horizontal button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+scrollbar.horizontal button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+/* Set thickness of scrollbars */
+.scrollbar.vertical slider,
+scrollbar.vertical slider {
+    min-width: 14px;
+}
+
+.scrollbar.horizontal.slider,
+scrollbar.horizontal slider {
+    min-height: 14px;
+}
+
+.scrollbar.vertical.slider:hover,
+scrollbar.vertical:hover slider {
+    min-width: 14px;
+}
+
+.scrollbar.horizontal.slider:hover,
+scrollbar.horizontal:hover slider {
+    min-height: 14px;
+}
+
+
+/* scrollbar on left side of terminal */
+* {
+ -TerminalScreenContainer-window-placement: bottom-right;
+ -TerminalScreenContainer-window-placement-set: true;
+}
+
+/* set thunar file manager colors */
+/* sidebar */
+/*.thunar .sidebar .view { background-color: #97ACC2; } */
+/*.thunar .sidebar .view:selected { background-color: #648bb3; } */
+/* main view */
+/*.thunar .standard-view .view { background-color: #9ebfbf; } */
+/*.thunar .standard-view .view:selected { background-color: #648bb3; } */
