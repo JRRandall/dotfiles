@@ -66,6 +66,11 @@
 *toolchest*xft*fontSize:    10
 *toolchest.clientDecoration:    title -border
 *toolchest.clientFunctions: -resize -minimize -maximize
+Xcursor.theme: redSGI
+!*SimpleMenu*Cursor:     left_ptr
+!*Cursor:                left_ptr
+!*Cursor*foreground:     red
+!*Cursor*background:     white
 
 !! Motif Widgets settings
 *XmList.shadowThickness:    2
@@ -134,22 +139,21 @@ URxvt*font:     xft:DejaVu Sans Mono:medium:size=10
 !!URxvt*font:     xft:Consolas:medium:size=10
 !!URxvt*font:     xft:DejaVu Sans Mono:pixelsize=12
 URxvt*internalBorder:
-URxvt*letterSpace: -1
+!URxvt*letterSpace: -1
 URxvt*saveLines:	10000
-URxvt*geometry:	86x40
+URxvt*geometry:	86x30
 ! Ctrl+Print Screen to save the scrollback buffer to a file
 URxvt.print-pipe: cat > ~/Downloads/URxvt_$(date '+%Y-%m-%d_%H:%M:%S').txt
 URxvt.title: Terminal
 !URxvt*termName:  xterm-256color
 URxvt.loginShell:  true
-URxvt*scrollstyle: rxvt
+URxvt*scrollstyle: next
 URxvt*scrollColor: #B2B2B2
 URxvt*troughColor: #969696
+!URxvt*thickness:   12
+!URxvt*scrollstyle: xrvt
 
-*SimpleMenu*Cursor:     left_ptr
-*Cursor:                left_ptr
-*Cursor*foreground:     red
-*Cursor*background:     white
+
 
 !! X clock settings
 *xclock.clientDecoration:   -title -resize +border
@@ -222,18 +226,20 @@ xcalc*ti.button54.background: gray95
 !! X osview
 !! set Decay options to True for more accurate snapshot
 xosview*title:      System Status
-xosview*font:       Mono-10
+!!xosview*font:       Mono-10
+xosview*font:       xft:Noto Sans:italic:size=10
+xosview*geometry:   300x379+5+366
 xosview*background: #0A3560
 xosview*foreground: #2C5783
-xosview*captions:   False
+xosview*captions:   True
 xosview*labels:     True
-xosview*usedlabels: True
+xosview*usedlabels: False
 xosview*transparent:False
 xosview*graphNumCols:       128
 xosview*horizontalMargin:   10
 xosview*verticalMargin:     6
 xosview*verticalSpacing:    10
-xosview*load:               True
+xosview*load:               False
 xosview*loadCritColor:      #FC842B
 xosview*loadWarnColor:      #F2EF44
 xosview*loadProcColor:      #56E67B
@@ -303,7 +309,7 @@ xosview*netDecay:           False
 xosview*netGraph:           False
 xosview*netUsedFormat:      autoscale
 xosview*netUsedDecay:       False
-xosview*netIface:           -lo0
+xosview*netIface:           False
 xosview*irqrate:    False
 xosview*interrupts: False
 xosview*battery:    False
@@ -347,3 +353,69 @@ xmessage*message.scrollHorizontal: Never
 xmessage*baseTranslations:#augment\
         <Key>Return:exit()\n\
         <Key>space:exit()
+
+! =================================================================
+! XScreenSaver - after 6.X
+! New xscreensaver with theming and xft support
+! =================================================================
+
+*themeNames: Default, SGI, Borderless, Dark Gray, Borderless Black, \
+             Green Black, White, Blue, Aqua Black, Wine
+
+*dialogTheme: SGI
+
+*sgi.Dialog.headingFont: sans-serif 12
+*sgi.Dialog.bodyFont: sans-serif 14
+*sgi.Dialog.labelFont: sans-serif bold 12
+*sgi.Dialog.unameFont: sans-serif bold italic 16
+*sgi.Dialog.buttonFont: sans-serif 12
+*sgi.Dialog.dateFont: sans-serif 10
+
+*sgi.errorFont:  sans-serif bold 18
+*sgi.errorColor: #ffff00000000
+
+*sgi.Dialog.background: #c100c100c100
+*sgi.Dialog.foreground: #000000000000
+*sgi.Dialog.topShadowColor: #e53fe53fe53f
+*sgi.Dialog.bottomShadowColor: #6a4d6a4d6a4d
+*sgi.Dialog.borderColor: #000000000000
+*sgi.Dialog.borderWidth: 0
+*sgi.Dialog.button.background: #c100c100c100
+*sgi.Dialog.button.foreground: #000000000000
+*sgi.Dialog.logo.background: #a40ca40ca40c
+*sgi.Dialog.error.foreground: #ffff00000000
+*sgi.Dialog.internalPadding: 16
+*sgi.Dialog.logo.height: 180
+*sgi.Dialog.logo.width: 180
+*sgi.Dialog.shadowWidth: 2
+*sgi.Dialog.thermometer.width: 10
+!*sgi.Dialog.text.background: #b8b8b8b8abab
+*sgi.Dialog.text.background: #be9292
+*sgi.Dialog.text.foreground: #000000000000
+*sgi.Dialog.thermometer.background: #c100c100c100
+!*sgi.Dialog.thermometer.foreground: #ffff00000000
+*sgi.Dialog.thermometer.foreground: #648bb3
+
+! XFontSel
+XFontSel.geometry: 656x242+16+133
+XFontSel*Background: #c100c100c100
+XFontSel*Foreground: #000000000000
+
+XFontSel.cursor:	left_ptr
+*allowShellResize:	true
+
+*commandBox.ShowGrip:	true
+*commandBox*top:	chainTop
+*commandBox*bottom:	chainTop
+
+xfontsel.pane.fontName.background: #b8b8b8b8abab
+xfontsel.pane.viewPort.sampleText.background: #b8b8b8b8abab
+
+*quitButton.Label:	dismiss
+
+*fieldBox*MenuButton.BorderWidth:	1
+*fieldBox*MenuButton.internalHeight:	1
+*fieldBox*MenuButton.internalWidth:	1
+*fieldBox*MenuButton.shapeStyle:	rectangle
+
+*fieldBox*field11.menu.Options.ShowUnselectable: False
