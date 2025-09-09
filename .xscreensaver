@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.08 for randall on Sat Apr 27 23:34:47 2024.
+# Written by xscreensaver-demo 6.09 for randall on Sat Jun 14 13:49:42 2025.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
@@ -10,7 +10,7 @@ passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
 verbose:	False
-splash:		True
+splash:		False
 splashDuration:	0:00:05
 demoCommand:	xscreensaver-settings
 nice:		10
@@ -18,11 +18,11 @@ fade:		True
 unfade:		True
 fadeSeconds:	0:00:03
 ignoreUninstalledPrograms:False
-dpmsEnabled:	False
+dpmsEnabled:	True
 dpmsQuickOff:	False
-dpmsStandby:	12:00:00
-dpmsSuspend:	12:00:00
-dpmsOff:	12:00:00
+dpmsStandby:	4:00:00
+dpmsSuspend:	4:00:00
+dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
@@ -31,13 +31,13 @@ imageDirectory:
 mode:		random
 selected:	0
 
-textMode:	program
+textMode:	date
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
 textURL:	https://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
-dialogTheme:	nscde
-settingsGeom:	5,25 5,25
+dialogTheme:	sgi
+settingsGeom:	7,29 7,29
 
 programs:								      \
 				xmatrix --root --phone 7819814630	    \n\
@@ -51,7 +51,7 @@ programs:								      \
 -				hopalong --root				    \n\
 -				imsmap --root				    \n\
 -				noseguy --root				    \n\
--				pyro --root				    \n\
+				pyro --root				    \n\
 -				qix --root				    \n\
 -				rocks --root				    \n\
 -				rorschach --root			    \n\
@@ -121,7 +121,7 @@ programs:								      \
 -				loop --root				    \n\
 -				penetrate --root			    \n\
 -				petri --root				    \n\
--				phosphor --root				    \n\
+				phosphor --root --fg #ff7900		    \n\
 - GL: 				pulsar --root				    \n\
 -				ripples --root				    \n\
 -				shadebobs --root			    \n\
@@ -161,8 +161,8 @@ programs:								      \
 - GL: 				glblur --root				    \n\
 - GL: 				glsnake --root				    \n\
 -				halftone --root				    \n\
-- GL: 				juggler3d --root			    \n\
-- GL: 				lavalite --root				    \n\
+  GL: 				juggler3d --root			    \n\
+  GL: 				lavalite --root				    \n\
 -				polyominoes --root			    \n\
 - GL: 				queens --root				    \n\
 - GL: 				sballs --root				    \n\
@@ -170,7 +170,7 @@ programs:								      \
 -				twang --root				    \n\
 - GL: 				antspotlight --root			    \n\
 				apple2 --root				    \n\
-- GL: 				atunnel --root				    \n\
+- GL: 				atunnel --root --no-texture		    \n\
 -				barcode --root				    \n\
 - GL: 				blinkbox --root				    \n\
 - GL: 				blocktube --root			    \n\
@@ -190,7 +190,7 @@ programs:								      \
 - GL: 				mirrorblob --root			    \n\
 -				piecewise --root			    \n\
 - GL: 				polytopes --root			    \n\
--				pong --root				    \n\
+				pong --root				    \n\
 -				popsquares --root			    \n\
 - GL: 				surfaces --root				    \n\
 -				xanalogtv --root			    \n\
@@ -203,7 +203,7 @@ programs:								      \
 -				intermomentary --root			    \n\
 -				memscroller --root			    \n\
 - GL: 				noof --root				    \n\
--				pacman --root				    \n\
+				pacman --root				    \n\
 - GL: 				pinion --root				    \n\
 - GL: 				polyhedra --root			    \n\
 - GL: 				providence --root			    \n\
@@ -292,6 +292,8 @@ programs:								      \
 -				droste --root				    \n\
 - GL: 				papercube --root			    \n\
 - GL: 				skulloop --root				    \n\
+  GL: 				highvoltage --root			    \n\
+- GL: 				kallisti --root				    \n\
 
 
 pointerHysteresis:  10

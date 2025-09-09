@@ -64,7 +64,7 @@ alias ping='ping -c 5'                 # ping just does 5 packets
 alias dir='ls -lah'                    # list files MS-DOS style
 alias ls='ls -a'                       # list all the files
 alias ll='ls -l'                       # long file list <dir> style
-alias lf='ls -d -- */ .*/ 2>/dev/null' # lisd all directories (folders) only
+alias lf='ls -d -- */ .*/ 2>/dev/null' # list all directories (folders) only
 alias lx='ls -lXB'                     # sort by extension
 alias lk='ls -lSr'                     # sort by size, biggest last
 alias lc='ls -ltcr'                    # sort by change time, recent last
@@ -137,10 +137,11 @@ function sendkey()               # send public key to remote server
   fi
 }
 export TERM=xterm-256color       # set terminal type
+unset PROMPT_COMMAND             # don't update the terminal title
 # two line prompt that can auto-adjust to terminal width
-C2=$'\001\033[1;34;40m\002'      # begin prompt bold cyan with black background
+C1=$'\001\033[1;34;40m\002'      # begin prompt bold cyan with black background
 C0=$'\001\033[0;0m\002'          # end prompt normal
-PS1='${C2}\[$(printf "%*s" $(($(tput cols)-22)) "") [\d \t]\r\u@\h \w \]${C0}\n\$ '
+PS1='${C1}\[$(printf "%*s" $(($(tput cols)-22)) "") [\d \t]\r\u@\h \w \]${C0}\n\$ '
 case "$(uname -sr)" in           # specific settings for certain OS
   Darwin*)                       # echo 'macOS'
     ;;
