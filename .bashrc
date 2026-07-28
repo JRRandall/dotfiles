@@ -9,11 +9,11 @@ export TZ="America/New_York"
 
 # ----- Readline tweaks -----
 bind 'set bell-style none'
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\C-b": backward-word'
-bind '"\C-f": forward-word'
-bind '"\C-x\C-x": exchange-point-and-mark'
+bind '"\e[A" history-search-backward' # up arrow to search history backward
+bind '"\e[B" history-search-forward'  # down arrow to search history forward
+bind '"\C-b" backward-word'           # ctrl-b move cursor back one word
+bind '"\C-f" forward-word'            # ctrl-f move cursor forward one word
+bind '"\C-x\C-x": exchange-point-and-mark' # ctrl-x toggle beginning/end line
 
 # ----- History -----
 shopt -s histappend
@@ -27,10 +27,10 @@ export PROMPT_COMMAND='history -a'
 shopt -s checkwinsize autocd cdspell
 
 # ----- Defaults -----
-umask 002
-export PAGER=less
-export LESS='-R -F -X -M -i'
-export XAUTHORITY="$HOME/.Xauthority"
+umask 002                             # permissions so group members can write
+export PAGER=less                     # use less as the default pager
+export XAUTHORITY=~/.Xauthority       # X Authority for ssh
+export LESS='-R'                      # raw control chars ANSI color escape
 export TERM=xterm-256color
 export NO_AT_BRIDGE=1
 
@@ -51,82 +51,89 @@ pathadd ~/.local/bin
 export PATH
 
 # ----- Aliases -----
-alias h='history'
-alias mkdir='mkdir -p'
-alias del='\rm -rf'
-alias -- ..='cd ..; pwd'
-alias -- ...='cd ../..; pwd'
-alias -- -='cd -'
-alias du='du -h'
-alias df='df -h'
-alias ls='ls -a'
-alias ll='ls -l'
-alias dir='ls -d -- */ .*/ 2>/dev/null'
-alias lx='ls -lXB'
-alias lk='ls -lSr'
-alias lc='ls -ltcr'
-alias lu='ls -ltur'
-alias lt='ls -ltr'
-alias lm='\ls -al | more'
-alias lr='ls -lR'
-alias li='ls -ai'
-alias lh='ls -lah'
+alias h='history'                      # shortcut for history
+alias mkdir='mkdir -p'                 # create path structure with mkdir
+alias del='\rm -rf'                    # MS-DOS style unsafe file removal
+alias -- ..='cd .. ; pwd'              # goes back one directory
+function ../() { cd ../; pwd; }        # goes back one directory
+alias -- ...='cd ../..; pwd'           # goes back two directories
+function .../() { cd ../..; pwd; }     # goes back two directories
+alias -- -='cd -'                      # goes to the previous directory
+function /() { cd /; pwd; }            # goes to the root directory
+alias du='du -h'                       # du human readable byte size
+alias df='df -h'                       # df human readable byte size
+alias ls='ls -a'                       # list all the files
+alias ll='ls -l'                       # long file list <dir> style
+alias dir='ls -d -- */ .*/ 2>/dev/null' # list all directories (folders) only
+alias lx='ls -lXB'                     # sort by extension
+alias lk='ls -lSr'                     # sort by size, biggest last
+alias lc='ls -ltcr'                    # sort by change time, recent last
+alias lu='ls -ltur'                    # sort by access time, recent last
+alias lt='ls -ltr'                     # sort by date, most recent last
+alias lm='\ls -al | more'              # pipe through 'more'
+alias lr='ls -lR'                      # recursive ls
+alias li='ls -ai'                      # list by index-node
+alias lh='ls -lah'                     # list files human readable size
 alias tags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q'
-alias cp='cp -v -i'
-alias mv='mv -v -i'
-alias sudothat='eval "sudo $(fc -ln -1)"'
-alias dist='lsb_release -a'
+alias cp='cp -v -i'                    # verbose file copy
+alias mv='mv -v -i'                    # verbose file move
+alias del='\rm -rf -v'                 # MS-DOS style unsafe file removal
+alias sudothat='eval "sudo $(fc -ln -1)"'  # sudo the last command
+alias dist='lsb_release -a'            # get distribution info
 alias zapdirs='find . -depth -type d -exec rmdir "{}" \;'
 alias allmd5='find . -type f -exec md5sum "{}" \;'
 alias cdiso='sudo dd if=/dev/cdrom of=image.iso bs=2048 conv=sync,notrunc'
-alias web='firefox -CreateProfile "$(hostname)"; firefox -P "$(hostname)" &'
-
-# ----- Project jump aliases -----
-alias omc='cd ~/Development/steed/zynq/boa'
-alias ce='cd ~/Development/ce'
-alias cmdtlm='cd ~/Development/cmdtlm'
-alias c='cd ~/Development/como_fsw'
-alias como_test='cd ~/Development/como_test'
-alias bamboo='cd ~/Development/Bamboo'
-alias wb='/opt/WindRiver7/workbench-4/startWorkbench.sh &'
+alias web='firefox -CreateProfile "$(hostname)" ; firefox -P "$(hostname)" &'
 alias nx='sudo /etc/NX/nxserver --list'
+alias gl='git log --oneline --decorate --graph -20'
 
 # ----- Functions (null/space safe) -----
-ff() { find . -type f \( -iname "*${*}*" \) -print0 2>/dev/null | xargs -0 -I{} printf '%s\n' "{}"; }
-fd() { find . -type d \( -iname "*${*}*" \) -print0 2>/dev/null | xargs -0 -I{} printf '%s\n' "{}"; }
-rgrep() { find . -type f -print0 2>/dev/null | xargs -0 grep -sin "$@"; }
-gcompress() { tar -cvf - -- "$@" | gzip  -8cvv > "$1".tar.gz; }
-bcompress() { tar -cvf - -- "$@" | bzip2 -9cvv > "$1".tar.bz2; }
-lcompress() { tar -cvf - -- "$@" | xz    -5cvv > "$1".tar.xz; }
-zcompress() { zip -9rv "$1".zip -- "$@"; }
-7compress() { 7z a -bb1 "$1".7z -- "$@"; }
-showstrings() { tr -d '\0' < "$1" | strings; }
-hex2dec() { printf '%d\n' "0x$1"; }
-dec2hex() { printf '%x\n' "$1"; }
+function which() { type -a "$@" ; } # old habits die hard (could also use command -V)
+function ff() { find . -type f -name '*'$*'*' -print 2>/dev/null ; }
+function fd() { find . -type d -name '*'$*'*' -print 2>/dev/null ; }
+function rgrep() { find . -type f -print 2>/dev/null | xargs grep -s -i -n "$*"; }
+function rminode() { find . -inum "$*" -exec rm -i "{}" +; }
+function gcompress() { tar cvf - "$*" | gzip -8cvv > "$*".tar.gz ; }
+function bcompress() { tar cvf - "$*" | bzip2 -9cvv > "$*".tar.bz2 ; }
+function lcompress() { tar cvf - "$*" | xz -5cvv > "$*".tar.xz ; }
+function zcompress() { zip -9rv "$*".zip "$*" ; }
+function 7compress() { 7z a -bb1 "$*".7z "$*" ; }
+function showstrings() { cat "$1" | tr -d "\0" | strings ; }
+function hex2dec() { echo $((0x$1)) ; }
+function dec2hex() { printf "%x\n" $1 ; }
 
-extract() {
-  local f=$1
-  [[ -f $f ]] || { echo "'$f' not found" >&2; return 1; }
-  case "$f" in
-    *.tar.bz2|*.tbz2|*.tbz)   bunzip2  <"$f" | tar xvf - ;;
-    *.tar.gz|*.tgz)           gunzip   <"$f" | tar xvf - ;;
-    *.tar.xz|*.txz)           unxz     <"$f" | tar xvf - ;;
-    *.bz2)                    bunzip2   "$f" ;;
-    *.rar)                    unrar x   "$f" ;;
-    *.gz)                     gunzip    "$f" ;;
-    *.xz)                     unxz      "$f" ;;
-    *.tar)                    tar xvf   "$f" ;;
-    *.zip|*.xsa|*.hdf)        unzip     "$f" ;;
-    *.Z)                      uncompress "$f" ;;
-    *.7z)                     7z x      "$f" ;;
-    *)                        echo "'$f' cannot be extracted via extract" ;;
-  esac
+function extract() {    # extract some common archive types
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.bz2)   bunzip2  < "$1" | tar xvf - ;;
+      *.tar.gz)    gunzip   < "$1" | tar xvf - ;;
+      *.tar.xz)    unxz     < "$1" | tar xvf - ;;
+      *.bz2)       bunzip2    "$1"             ;;
+      *.rar)       unrar x    "$1"             ;;
+      *.gz)        gunzip     "$1"             ;;
+      *.xz)        unxz       "$1"             ;;
+      *.tar)       tar xvf    "$1"             ;;
+      *.tbz2)      bunzip2  < "$1" | tar xvf - ;;
+      *.tbz)       bunzip2  < "$1" | tar xvf - ;;
+      *.tgz)       gunzip   < "$1" | tar xvf - ;;
+      *.txz)       unxz     < "$1" | tar xvf - ;;
+      *.zip)       unzip      "$1"             ;;
+      *.xsa)       unzip      "$1"             ;; # PL images
+      *.hdf)       unzip      "$1"             ;; # PL images
+      *.Z)         uncompress "$1"             ;;
+      *.7z)        7z x       "$1"             ;;
+      *)           echo "'$1' cannot be extracted via >extract<" ;;
+    esac
+  else
+    echo "'$1' file not found" >&2
+  fi
 }
 
-sendkey() {
+function sendkey() {    # send public key to remote server
   [[ $# -eq 1 ]] || { echo "Usage: sendkey user@host" >&2; return 2; }
   local key=
-  if   [[ -f $HOME/.ssh/id_ecdsa.pub ]]; then key=$HOME/.ssh/id_ecdsa.pub
+  if   [[ -f $HOME/.ssh/id_ed25519.pub ]]; then key=$HOME/.ssh/id_ed25519.pub
+  elif [[ -f $HOME/.ssh/id_ecdsa.pub ]]; then key=$HOME/.ssh/id_ecdsa.pub
   elif [[ -f $HOME/.ssh/id_rsa.pub   ]]; then key=$HOME/.ssh/id_rsa.pub
   else echo "No public key found" >&2; return 1; fi
   ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < "$key"
