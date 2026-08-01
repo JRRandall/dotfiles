@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/ju17841/BRSE/peta_xu7_pe3/project-spec/meta-user/recipes-examples/channelizer-examples/files'
+let g:netrw_dirhist_2='/home/ju17841/BRSE/peta_xu7_pe3/project-spec/meta-user/recipes-examples/channelizer-examples'
+let g:netrw_dirhist_3='/home/ju17841/BRSE/peta_xu7_pe3/project-spec/meta-user/recipes-libraries/libadsspi/files'
+let g:netrw_dirhist_4='/home/ju17841/.local/bin'

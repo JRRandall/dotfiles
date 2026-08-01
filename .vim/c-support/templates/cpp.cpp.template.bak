@@ -53,64 +53,68 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.method-implementation ==
 //+-----------------------------------------------------------------------+//
-//|   Method:  |?CLASSNAME|::|?METHODNAME|
+//|   Method:  |?CLASSNAME|::|?METHODNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-|?RETURNTYPE| |CLASSNAME|::|METHODNAME|(<CURSOR><+argument list+>)
+|?RETURNTYPE| |CLASSNAME|::|METHODNAME|( <CURSOR><+argument list+> )
 {
-  return <+return value+> ;
+    return <+return value+> ;
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.accessor-implementation ==
 //+-----------------------------------------------------------------------+//
-//|   Method:  |?CLASSNAME|::get|?ATTRIBUTE|
+//|   Method:  |?CLASSNAME|::get|?ATTRIBUTE|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-inline |?RETURNTYPE| |CLASSNAME|::get|ATTRIBUTE|() const
+inline |?RETURNTYPE| |CLASSNAME|::get|ATTRIBUTE|(  ) const
 {
-  return |ATTRIBUTE|;
+    return |ATTRIBUTE|;
 }
 
 //+-----------------------------------------------------------------------+//
-//|   Method:  |CLASSNAME|::set|ATTRIBUTE|
+//|   Method:  |CLASSNAME|::set|ATTRIBUTE|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-inline void |CLASSNAME|::set|ATTRIBUTE|(|RETURNTYPE| value)
+inline void |CLASSNAME|::set|ATTRIBUTE|( |RETURNTYPE| value )
 {
-  |ATTRIBUTE| = value;
-  return ;
+    |ATTRIBUTE| = value;
+    return ;
 }
 <CURSOR>
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.class-definition ==
 /*************************************************************************//**
+ * @class |?CLASSNAME:c|
+ *
+ * @ingroup 
+ *
  * @brief
  *      <CURSOR>
  ****************************************************************************/
 class |CLASSNAME|
 {
-  public:
+    public:
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class constructor
-     ********************************************************************/
-    |CLASSNAME|() { }
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class constructor
+         ********************************************************************/
+        |CLASSNAME|() { }
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class destructor
-     ********************************************************************/
-    ~|CLASSNAME|() { }
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class destructor
+         ********************************************************************/
+        ~|CLASSNAME|() { }
 
-  protected:
+    protected:
 
-  private:
+    private:
 
 };  /* --  end of class |CLASSNAME|  -- */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.class-implementation ==
 //+-----------------------------------------------------------------------+//
-//| Constructor:  |?CLASSNAME|::|CLASSNAME|
+//| Constructor:  |?CLASSNAME|::|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 |CLASSNAME|::|CLASSNAME|()
 {<CURSOR>
@@ -128,169 +132,178 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  ****************************************************************************/
 class |CLASSNAME|
 {
-  public:
+    public:
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class constructor
-     ********************************************************************/
-    |CLASSNAME|();
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class constructor
+         ********************************************************************/
+        |CLASSNAME|();
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class copy constructor
-     * @param other
-     *      The reference object for this copy constructor
-     ********************************************************************/
-    |CLASSNAME|(const |CLASSNAME| &other);
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class copy constructor
+         * @param other
+         *      The reference object for this copy constructor
+         ********************************************************************/
+        |CLASSNAME|( const |CLASSNAME| &other );
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class destructor
-     ********************************************************************/
-    ~|CLASSNAME|();
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class destructor
+         ********************************************************************/
+        ~|CLASSNAME|();
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class assignment operator
-     * @param other
-     *      The reference object for this assignment operator
-     ********************************************************************/
-    |CLASSNAME|& operator = (const |CLASSNAME| &other);
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class assignment operator
+         * @param other
+         *      The reference object for this assignment operator
+         ********************************************************************/
+        |CLASSNAME|& operator = ( const |CLASSNAME| &other );
 
-  protected:
+    protected:
 
-  private:
+    private:
 
 };  /* --  end of class |CLASSNAME|  -- */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.class-using-new-implementation ==
 //+-----------------------------------------------------------------------+//
-//| Constructor:  |?CLASSNAME:c|::|CLASSNAME|
+//| Constructor:  |?CLASSNAME:c|::|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 |CLASSNAME|::|CLASSNAME|()
 {
 }
 
 //+-----------------------------------------------------------------------+//
-//| Copy c'tor:  |CLASSNAME|::|CLASSNAME|
+//| Copy c'tor:  |CLASSNAME|::|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-|CLASSNAME|::|CLASSNAME|(const |CLASSNAME| &other)
+|CLASSNAME|::|CLASSNAME|( const |CLASSNAME| &other )
 {
 }
 
 //+-----------------------------------------------------------------------+//
-//| Destructor:  |CLASSNAME|::~|CLASSNAME|
+//| Destructor:  |CLASSNAME|::~|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 |CLASSNAME|::~|CLASSNAME|()
 {
 }
 
 //+-----------------------------------------------------------------------+//
-//| Assignment:  |CLASSNAME|::|CLASSNAME|
+//| Assignment:  |CLASSNAME|::|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-|CLASSNAME|& |CLASSNAME|::operator = (const |CLASSNAME| &other)
+|CLASSNAME|& |CLASSNAME|::operator = ( const |CLASSNAME| &other )
 {
-  if (this != &other)
-  {
-    <CURSOR>
-  }
-  return *this;
+    if ( this != &other )
+    {
+        <CURSOR>
+    }
+    return *this;
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.error-class ==
 /*************************************************************************//**
+ * @class |?CLASSNAME:c|
+ *
+ * @ingroup 
+ *
  * @brief
  *      <CURSOR>
  ****************************************************************************/
 class |CLASSNAME|
 {
-  public:
+    public:
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class constructor
-     ********************************************************************/
-    |CLASSNAME|(std::string msg = "|CLASSNAME|"):message(msg) { }
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class constructor
+         ********************************************************************/
+        |CLASSNAME|( std::string msg = "|CLASSNAME|" ):message(msg)  { }
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| virtual class destructor
-     ********************************************************************/
-    virtual ~|CLASSNAME|() { }
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| virtual class destructor
+         ********************************************************************/
+        virtual ~|CLASSNAME|( )  { }
 
-    /*****************************************************************//**
-     * @brief
-     *      Overrides the behavior of the what() builtin.
-     * @return
-     *      Returns a user defined error message string.
-     ********************************************************************/
-    virtual std::string what() const throw() { return message; }
+        /*****************************************************************//**
+         * @brief
+         *      Overrides the behavior of the what() builtin.
+         *
+         * @return
+         *      Returns a user defined error message string.
+         ********************************************************************/
+        virtual std::string what( ) const throw( )  { return message; }
 
-  protected:
+    protected:
 
-    /*****************************************************************//**
-     * @brief
-     *      The error message for holding |CLASSNAME| errors.
-     ********************************************************************/
-    std::string message;
+        /*****************************************************************//**
+         * @brief
+         *      The error message for holding |CLASSNAME| errors.
+         ********************************************************************/
+        std::string message;
 
 }; /* --  end of class |CLASSNAME|  -- */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-method-implementation ==
 //+-----------------------------------------------------------------------+//
-//|   Method:  |?CLASSNAME|::|?METHODNAME|
+//|   Method:  |?CLASSNAME|::|?METHODNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 template < class T >
-void<CURSOR> |CLASSNAME|<T>::|METHODNAME|(<+argument list+>)
+void<CURSOR> |CLASSNAME|<T>::|METHODNAME|( <+argument list+> )
 {
-  return;
+    return ;
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-accessor-implementation ==
 //+-----------------------------------------------------------------------+//
-//|   Method:  |?CLASSNAME|::get|?ATTRIBUTE|
+//|   Method:  |?CLASSNAME|::get|?ATTRIBUTE|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 template < class T >
-inline |?RETURNTYPE| |CLASSNAME|<T>::get|ATTRIBUTE|() const
+inline |?RETURNTYPE| |CLASSNAME|<T>::get|ATTRIBUTE|(  ) const
 {
-  return |ATTRIBUTE|;
+    return |ATTRIBUTE|;
 }
 
 //+-----------------------------------------------------------------------+//
-//|   Method:  |CLASSNAME|::set|ATTRIBUTE|
+//|   Method:  |CLASSNAME|::set|ATTRIBUTE|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 template < class T >
-inline void |CLASSNAME|<T>::set|ATTRIBUTE|(|RETURNTYPE| value)
+inline void |CLASSNAME|<T>::set|ATTRIBUTE|( |RETURNTYPE| value )
 {
-  |ATTRIBUTE| = value;
-  return ;
+    |ATTRIBUTE| = value;
+    return ;
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-class-definition ==
 /*************************************************************************//**
+ * @class |?CLASSNAME:c|
+ *
+ * @ingroup 
+ *
  * @brief
  *      <CURSOR>
  ****************************************************************************/
 template < class T >
 class |CLASSNAME|
 {
-  public:
+    public:
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class constructor
-     ********************************************************************/
-    |CLASSNAME|();
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class constructor
+         ********************************************************************/
+        |CLASSNAME|();
 
-  protected:
+    protected:
 
-  private:
+    private:
 
 };  /* --  end of template class |CLASSNAME|  -- */
 
@@ -307,52 +320,56 @@ template < class T >
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-class-using-new-definition ==
 /*************************************************************************//**
+ * @class |?CLASSNAME:c|
+ *
+ * @ingroup 
+ *
  * @brief
  *      <CURSOR>
  ****************************************************************************/
 template < class T >
 class |CLASSNAME|
 {
-  public:
+    public:
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class constructor
-     ********************************************************************/
-    |CLASSNAME|();
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class constructor
+         ********************************************************************/
+        |CLASSNAME|();
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class copy constructor
-     * @param other
-     *      The reference object for this copy constructor
-     ********************************************************************/
-    |CLASSNAME|(const |CLASSNAME| &other);
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class copy constructor
+         * @param other
+         *      The reference object for this copy constructor
+         ********************************************************************/
+        |CLASSNAME|( const |CLASSNAME| &other );
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class destructor
-     ********************************************************************/
-    ~|CLASSNAME|();
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class destructor
+         ********************************************************************/
+        ~|CLASSNAME|();
 
-    /*****************************************************************//**
-     * @brief
-     *      |CLASSNAME| class assignment operator
-     * @param other
-     *      The reference object for this assignment operator
-     ********************************************************************/
-    |CLASSNAME|& operator = (const |CLASSNAME| &other);
+        /*****************************************************************//**
+         * @brief
+         *      |CLASSNAME| class assignment operator
+         * @param other
+         *      The reference object for this assignment operator
+         ********************************************************************/
+        |CLASSNAME|& operator = ( const |CLASSNAME| &other );
 
-  protected:
+    protected:
 
-  private:
+    private:
 
 }; /* --  end of template class |CLASSNAME|  -- */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-class-using-new-implementation ==
 //+-----------------------------------------------------------------------+//
-//| Constructor:  |?CLASSNAME:c|::|CLASSNAME|
+//| Constructor:  |?CLASSNAME:c|::|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 template < class T >
 |CLASSNAME|< T >::|CLASSNAME|()
@@ -360,15 +377,15 @@ template < class T >
 }
 
 //+-----------------------------------------------------------------------+//
-//| Copy c'tor:  |CLASSNAME|::|CLASSNAME|
+//| Copy c'tor:  |CLASSNAME|::|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 template < class T >
-|CLASSNAME|< T >::|CLASSNAME|(const |CLASSNAME| &other)
+|CLASSNAME|< T >::|CLASSNAME|( const |CLASSNAME| &other )
 {
 }
 
 //+-----------------------------------------------------------------------+//
-//| Destructor:  |CLASSNAME|::~|CLASSNAME|
+//| Destructor:  |CLASSNAME|::~|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 template < class T >
 |CLASSNAME|< T >::~|CLASSNAME|()
@@ -376,58 +393,58 @@ template < class T >
 }
 
 //+-----------------------------------------------------------------------+//
-//| Assignment:  |CLASSNAME|::|CLASSNAME|
+//| Assignment:  |CLASSNAME|::|CLASSNAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-  template < class T >
-|CLASSNAME|< T >& |CLASSNAME|< T >::operator = (const |CLASSNAME| &other)
+template < class T >
+|CLASSNAME|< T >& |CLASSNAME|< T >::operator = ( const |CLASSNAME| &other )
 {
-  return *this;
+    return *this;
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-function ==
 //+-----------------------------------------------------------------------+//
-//|   Method:  |?TEMPALTE_FUNCTION_NAME|
+//|   Method:  |?TEMPALTE_FUNCTION_NAME|   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
 template <class T>
-void<CURSOR> |TEMPALTE_FUNCTION_NAME|(<+argument list+>)
+void<CURSOR> |TEMPALTE_FUNCTION_NAME|( <+argument list+> )
 {
-  return;
+    return ;
 }
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.operator-in ==
 //+-----------------------------------------------------------------------+//
-//|   Method:  operator >> (input stream)
+//|   Method:  operator >> (input stream)   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-istream & operator >> (istream & is, |?CLASSNAME| & obj)
+istream & operator >> ( istream & is, |?CLASSNAME| & obj )
 {
-  is >> obj.<CURSOR>;
-  return is;
+    is >> obj.<CURSOR> ;
+    return is;
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.operator-out ==
 //+-----------------------------------------------------------------------+//
-//|   Method:  operator << (output stream)
+//|   Method:  operator << (output stream)   Author: |AUTHORREF|
 //+-----------------------------------------------------------------------+//
-ostream & operator << (ostream & os, const |?CLASSNAME| & obj)
+ostream & operator << ( ostream & os, const |?CLASSNAME| & obj )
 {
-  os << obj.<CURSOR>;
-  return os;
+    os << obj.<CURSOR> ;
+    return os;
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.try-catch ==
 try {
 <SPLIT>}
-catch (const <CURSOR> &ExceptObj) {  /* handle exception: */
+catch ( const <CURSOR> &ExceptObj ) {  /* handle exception: */
 }
 catch (...) {  /* handle exception: unspecified */
 }
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.catch ==
-catch (const <CURSOR> &ExceptObj) {  /* handle exception: */
+catch ( const <CURSOR> &ExceptObj ) {  /* handle exception: */
 <SPLIT>}
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.catch-points ==
@@ -439,27 +456,27 @@ extern "C" {<CURSOR>
 <SPLIT>}
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.open-input-file ==
-string ifs_file_name = "<CURSOR>";   /* input file name */
-ifstream ifs;                              /* create ifstream object */
+string    ifs_file_name = "<CURSOR>";   /* input file name */
+ifstream  ifs;                                /* create ifstream object */
 
-ifs.open(ifs_file_name.c_str());           /* open ifstream */
+ifs.open ( ifs_file_name.c_str() );           /* open ifstream */
 if (!ifs)
 {
-  cerr << "\nERROR : failed to open input  file " << ifs_file_name << endl;
-  exit (EXIT_FAILURE);
+    cerr << "\nERROR : failed to open input  file " << ifs_file_name << endl;
+    exit (EXIT_FAILURE);
 }
 <SPLIT>{-continue here-}
 ifs.close ();                                 /* close ifstream */
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.open-output-file ==
-string ofs_file_name = "<CURSOR>";   /* output file name */
-ofstream ofs;                             /* create ofstream object */
+string    ofs_file_name = "<CURSOR>";   /* output file name */
+ofstream  ofs;                                /* create ofstream object */
 
-ofs.open(ofs_file_name.c_str());          /* open ofstream */
+ofs.open ( ofs_file_name.c_str() );           /* open ofstream */
 if (!ofs)
 {
-  cerr << "\nERROR : failed to open output file " << ofs_file_name << endl;
-  exit (EXIT_FAILURE);
+    cerr << "\nERROR : failed to open output file " << ofs_file_name << endl;
+    exit (EXIT_FAILURE);
 }
 <SPLIT>{-continue here-}
 ofs.close ();                                 /* close ofstream */
